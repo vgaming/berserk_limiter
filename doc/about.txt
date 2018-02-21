@@ -1,0 +1,5 @@
+Limit ''berserk'' weapons.
+
+Lets you set maximum ''berserk'' duration in game creation dialog.
+
+The limit is applied at the end of each side-s turn.
