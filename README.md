@@ -1,5 +1,5 @@
 Wesnoth add-on "berserk limiter"
 
-[Add-on description](./doc/about.txt)
+[Add-on description](./data/doc/about.txt)
 
 License: GPLv2+
