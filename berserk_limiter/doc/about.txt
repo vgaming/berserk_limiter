@@ -1,3 +1,1 @@
-Limit ''berserk'' weapons.
-
-Lets you set maximum ''berserk'' duration in game creation dialog.
+Limit ''berserk'' duration in game creation dialog.
