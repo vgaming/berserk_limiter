@@ -1,1 +1,3 @@
 Limit ''berserk'' duration in game creation dialog.
+
+Slider   1 [-----------] 30
