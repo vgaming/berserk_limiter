@@ -1,3 +1,5 @@
 Limit ''berserk'' duration in game creation dialog.
 
 Slider   1 [-----------] 30
+
+May be useful on maps where berserk units are overpowered.

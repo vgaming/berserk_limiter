@@ -5,7 +5,6 @@ local wesnoth = wesnoth
 local helper = wesnoth.require("lua/helper.lua")
 local T = wesnoth.require("lua/helper.lua").set_wml_tag_metatable {}
 local ipairs = ipairs
-local math = math
 local print = print
 
 
@@ -29,15 +28,17 @@ local function berserk_limiter_apply()
 							tag.value = tag.value + 1
 							tag.cumulative = false
 						end
-						tag.value = math.min(tag.value, limit)
-						if tag.description then
-							local upper_name = string.gsub(tostring(tag.name), "^%l", string.upper)
-							tag.description = upper_name
-								.. " limited to " .. limit .. " rounds.\n"
-								.. "Old description: \n" .. tag.description
+						if tag.value > limit then
+							tag.value = limit
+							if tag.description then
+								local upper_name = string.gsub(tostring(tag.name), "^%l", string.upper)
+								tag.description = upper_name
+									.. " limited to " .. limit .. " rounds.\n"
+									.. "Old description: \n" .. tag.description
+							end
+							if tag.name then tag.name = tag.name .. "_limit_" .. limit end
+							if tag.name_inactive then tag.name_inactive = tag.name_inactive .. "_limit_" .. limit end
 						end
-						if tag.name then tag.name = tag.name .. "_limit_" .. limit end
-						if tag.name_inactive then tag.name_inactive = tag.name_inactive .. "_limit_" .. limit end
 					end
 				end
 			end
