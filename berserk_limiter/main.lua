@@ -1,12 +1,10 @@
--- << berserk_limiter_main
+-- << main | berserk_limiter
 
 local _G = _G
 local wesnoth = wesnoth
-local helper = wesnoth.require("lua/helper.lua")
-local T = wesnoth.require("lua/helper.lua").set_wml_tag_metatable {}
+local T = wml.tag
 local ipairs = ipairs
 local print = print
-
 
 local function berserk_limiter_apply()
 	local limit = wesnoth.get_variable("berserk_limit_value")
@@ -17,8 +15,8 @@ local function berserk_limiter_apply()
 			variable = "berserk_limiter_units"
 		}
 		local unit_var = wesnoth.get_variable("berserk_limiter_units")
-		for attack in helper.child_range(unit_var, "attack") do
-			for specials in helper.child_range(attack, "specials") do
+		for attack in wml.child_range(unit_var, "attack") do
+			for specials in wml.child_range(attack, "specials") do
 				for _, special in ipairs(specials) do
 					local name = special[1]
 					local tag = special[2]
